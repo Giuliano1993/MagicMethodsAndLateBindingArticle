@@ -14,16 +14,16 @@ class Entity{
     }
 
     public function setWeapon(string $weaponName){
-        $this->weapon  = $this->createWeapon($weaponName);
+        $this->weapon  = $this->equipWeapon($weaponName);
         return $this;
     }
 
     public function getWeapon() : Weapon
     {
-        return $this->weapon ?? $this->createWeapon();
+        return $this->weapon ?? $this->equipWeapon();
     }
 
-    private function createWeapon($weaponName = null): Weapon
+    private function equipWeapon($weaponName = null): Weapon
     {
         return  new Weapon($weaponName);
     }

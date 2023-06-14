@@ -1,13 +1,13 @@
 <?php
 
-require_once './Models/Player.php';
+require_once './Models/Steve.php';
 
-Player::attack();
+Steve::attack();
 
 echo '<br>';
+echo 'Wait... pro player entering the lobby';
+echo '<br>';
 
-$player2 = new Player();
-
-$player2->setWeapon('Zucchini');
-
+$player2 = new Steve();
+$player2->setWeapon('Diamond Sword');
 $player2->attack();
