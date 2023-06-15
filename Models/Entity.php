@@ -8,10 +8,7 @@ class Entity{
     protected $weapon;
 
     use ForwardCallTrait;
-    public function __construct()
-    {
-       
-    }
+  
 
     public function setWeapon(string $weaponName){
         $this->weapon  = $this->equipWeapon($weaponName);
@@ -25,7 +22,7 @@ class Entity{
 
     private function equipWeapon($weaponName = null): Weapon
     {
-        return  new Weapon($weaponName);
+        return  new Weapon($weaponName, get_class($this));
     }
 
     public function __call($name, $arguments):void
@@ -40,6 +37,7 @@ class Entity{
 
     public static function __callStatic($name, $arguments): mixed
     {
+        
         return (new static)->$name($arguments);
     }
 }
