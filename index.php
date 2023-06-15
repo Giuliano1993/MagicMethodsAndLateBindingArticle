@@ -5,9 +5,9 @@ require_once './Models/Steve.php';
 Steve::attack();
 
 echo '<br>';
-echo 'Wait... pro player entering the lobby';
+echo 'Wait... an enemy is approaching';
 echo '<br>';
 
-$player2 = new Steve();
-$player2->setWeapon('Diamond Sword');
-$player2->attack();
+$skeleton = new Entity();
+$skeleton->setWeapon('Diamond Sword');
+$skeleton->attack();
